@@ -1,0 +1,24 @@
+setwd("/Users/garrettchen/desktop/SZ-covid-map")
+
+#Daily increase data starting from 2020
+data_all <- read.csv("SZ_daily_new.csv")
+str(data_all)
+
+#Daily increase data starting from 2021/12/19
+data_1219 <- read.csv("SZ_data_1219.csv")
+str(data_1219)
+
+library(ggplot2)
+#Graph of daily increase
+qplot(Days,Daily_new,data = data_1219,
+      xlab = "Date",
+      ylab = "Daily New",
+      main = "SZ_daily_new"
+)
+
+#Graph of cumulative new
+qplot(Days,Cumulative,data = data_1219,
+      xlab = "Day (from 2021/12/29)",
+      ylab = "Cumulative (cases)",
+      main = "SZ_cumulative_from_2021Dec19"
+)
